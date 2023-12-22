@@ -24,7 +24,11 @@ function validateForm() {
 function forgotAction() {
   var usernameInput = document.getElementById("username");
   var email = usernameInput.value;
-  window.open(
-    `mailto:support@smartserv.io?subject=Password Reset&body=Request For Change Of Password From ${email}`
-  );
+  if (email.length == 0) {
+    alert("Please enter a valid email address");
+  } else {
+    window.open(
+      `mailto:support@smartserv.io?subject=Password Reset&body=Request For Change Of Password From ${email}`
+    );
+  }
 }
